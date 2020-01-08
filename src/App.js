@@ -115,7 +115,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container paper">
         <div className="row">
           <div className="col-md-12">
             <h1 className="text-center" >TO DO LIST</h1>

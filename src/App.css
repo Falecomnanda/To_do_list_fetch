@@ -2,7 +2,7 @@
 
 .container {
 
-background-color: rgb(39, 196, 136);
+background-color: rgba(19, 224, 145, 0.795);
 padding: 20px;
 margin: 50px;
 }
@@ -10,10 +10,56 @@ margin: 50px;
 h1 {
   font-family: 'Ma Shan Zheng', cursive;
   font-size: 50px;
-  color: pink;
+  color: rgb(241, 195, 203);
 } 
 
 li {
   border-bottom:1px;
   height: 30px; 
+}
+
+.paper {
+  background-color: rgba(74, 156, 26, 0.753);
+  /* Need position to allow stacking of pseudo-elements */
+  position: relative;
+  /* Padding for demo purposes */
+  padding: 30px;
+}
+
+.paper,
+.paper::before,
+.paper::after {
+  /* Add shadow to distinguish sheets from one another */
+  box-shadow: 2px 1px 1px rgba(160, 80, 80, 0.15);
+}
+
+.paper::before,
+.paper::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(55, 112, 8, 0.637);
+}
+
+/* Second sheet of paper */
+.paper::before {
+  left: 7px;
+  top: 5px;
+  z-index: -1;
+}
+
+/* Third sheet of paper */
+.paper::after {
+  left: 12px;
+  top: 10px;
+  z-index: -2;
+}
+
+.fas {
+  display: none;
+}
+
+li:hover .fas {
+  display:block
 }
